@@ -1,0 +1,40 @@
+10
+
+dir
+412
+svn+sshtunnel://Lemmiwinks@titan000/svn/kore/trunk/server/backend/tests/module/CAC
+svn+sshtunnel://Lemmiwinks@titan000/svn/kore
+
+
+
+2012-01-13T16:18:11.564723Z
+372
+Revan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257e5939-2305-44b3-ac6c-71a7badb9126
+
+controller
+dir
+
+registry
+dir
+
+pipe
+dir
+
+command
+dir
+

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * 
+ * @author Revan
+ */
+class HbaseStorage extends StorageDefinition {
+    
+    public static $map = array(
+        
+        // NODES
+        'UserNode'  => 'users',
+        'TagNode'   => 'tags',
+        
+        // EDGES
+        'UserFollowerEdge' => 'userfollowers'
+    );
+    
+}
+
+?>

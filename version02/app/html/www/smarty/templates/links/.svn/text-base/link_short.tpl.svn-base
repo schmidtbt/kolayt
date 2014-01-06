@@ -1,0 +1,1 @@
+/boot/?p=page&short={$short}

@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @author Revan
+ */
+class Kore_Api_Map extends CAC_App_Map  {
+    
+    protected $defaultCommand = 'CAC_API_Default_Command';
+    
+	protected $methods = array(
+		
+        'user'		=> array(	'tag'	=>	array(	'follow'	=> 'API_User_Tag',
+													'unfollow'	=> 'API_User_Tag' ),
+								'mod'	=>	array(	'bio'		=> 'API_User_Mod',
+													'email'		=> 'API_User_Mod' )
+							),
+		
+		'tag'		=> array(	'create'=>	'API_Tag',
+								'search'=>	'API_Tag_Search'
+							),
+		
+		'link'		=> array(	'action'=>	array(	'like'		=> 'API_Link_Action',
+													'upload'	=> 'API_Link_Action')
+							),
+		
+	);
+    
+}
+
+?>

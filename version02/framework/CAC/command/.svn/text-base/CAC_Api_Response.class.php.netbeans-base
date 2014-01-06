@@ -1,0 +1,74 @@
+<?php
+
+class CAC_Api_Response {
+    
+    protected $output;
+    
+    public function __construct(){
+        $this->output = array();
+    }
+    
+    public function newEntry( $type, $msg ){
+        $this->output[ $type ] = $msg;
+    } 
+    
+	/**
+	 * Format Reponse in JSON format
+	 * @return {String} of JSON content
+	 * @note You must set the content-type for this to display properly
+	 */
+    public function getAsJson(){
+        $encode = json_encode( $this->output );
+		if( $encode ){
+			return $encode;
+		}
+    }
+    
+	/**
+	 * Format Response as XML 1.0
+	 * @return {String} of XML content 
+	 * @note You must set the content-type for this to display properly
+	 */
+    public function getAsXML(){
+        $xml = $this->stemXML( 'kolayt_api'  );
+	$outXML = $this->array_to_xml( $this->output,  $xml );
+	return $outXML;
+    }
+    
+	/**
+	 *
+	 * @param {String} $rootNodeName
+	 * @return \SimpleXMLElement 
+	 */
+	private function stemXML( $rootNodeName ){
+		$xml = new SimpleXMLElement("<?xml version=\"1.0\"?><" . $rootNodeName . "></" . $rootNodeName . ">");
+		return $xml;
+	}
+	
+	/**
+	 *
+	 * @param array $inputArray Input Associative array of field => values
+	 * @param SimpleXMLElement $outputXML
+	 * @return {String} Of XML 1.0 formatted content
+	 */
+	private function array_to_xml( array $inputArray, SimpleXMLElement &$outputXML ) {
+		foreach ($inputArray as $key => $value) {
+			if (is_array($value)) {
+				if (!is_numeric($key)) {
+					$subnode = $outputXML->addChild("$key");
+					$this->array_to_xml($value, $subnode);
+				} else {
+					$this->array_to_xml($value, $outputXML);
+				}
+			} else {
+				$outputXML->addChild("$key", "$value");
+			}
+		}
+		
+		return $outputXML->asXML();
+		
+	}
+	
+}
+
+?>

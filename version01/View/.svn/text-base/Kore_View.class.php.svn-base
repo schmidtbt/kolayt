@@ -1,0 +1,60 @@
+<?php
+
+class Kore_View {
+	
+	private $_data;
+	private static $defpath = array(
+		"/var/www/html/kore/trunk/server/backend/library/kore/View",
+		'/Applications/MAMP/htdocs/kore/View'
+		);
+	
+	protected $pathtoview = "/server/dflkjad";
+	
+	public function __construct( array $data = null ){
+		if( ! is_null($data) ){
+			$this->_data = $data;
+		}
+	}
+	
+	/**
+	 * @brief Execute the view script using the $data variable and return the string
+	 * @retval HTML contents of the rendered view
+	 * @note By including the file in this manner, the .view.php files will have a scope with the
+	 * $data object and the $this-> will refer to the instance of Kore_View from which they were invoked.
+	 * @throws Kore_View_Exception if the file does not exist
+	 */
+	public function render( $view_file ){
+		
+		$data = isset( $this->_data ) ? $this->_data : array();
+		
+		// @throws Kore_View_Exception
+		$path = self::check( $view_file );
+		
+		ob_start();
+		include( $path );
+		$contents = ob_get_contents();
+		ob_end_clean();
+		
+		return $contents;
+	}
+	
+	
+	private static function check( $filePath ){
+		
+		foreach( self::$defpath as $path ){
+			$tempPath = self::setPath( $path , $filePath );
+			if( file_exists( $tempPath )){
+				return $tempPath;
+			}
+		}
+		
+		throw new Kore_View_Exception("Kore_View::check The specified file was not found at any view paths. Check config.ini for available paths" );
+	}
+	
+	private static function setPath( $path, $file ){
+		return $path . '/' . $file . '.view.php';
+	}
+	
+}
+
+?>

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @author Revan
+ */
+class CAC_Application_Router {
+    
+    /**
+     *
+     * @param CAC_Client_Request $http 
+     * @return CAC_App_Map
+     */
+    public static function route( CAC_Client_Request $http ){
+        
+        // Create switch conditions for different applications based upon client request
+        if( true ){
+            return new Kore_Web_Map();
+        } else {
+            return new Kore_Api_Map();
+        }
+        
+    }
+    
+    
+}
+
+?>

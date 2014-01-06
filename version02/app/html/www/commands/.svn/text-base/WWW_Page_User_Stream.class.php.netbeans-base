@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * 
+ * @author Revan
+ */
+class WWW_Page_User_Stream extends CAC_Command {
+    
+    public function doExecute(CAC_Client_Request $http) {
+        
+        $params = $http->getUrlParams();
+        
+        if( isset( $params['user'] ) ){
+            
+            $user = new UserNode( new GraphKey( $params['user'], true ) );
+            $stream = VicinityScanner::vicinity( $user, 'UserStreamEdge' );
+            
+            static::streamDisplay( $this->getResponse()->smarty(), $stream );
+            
+        }
+        $this->getResponse()->setTemplate( 'www_page_user_stream.tpl' );
+        
+    }
+    
+    /**
+     *
+     * @param Smarty $smarty
+     * @param UserStreamEdge $streamEdges
+     */
+    public static function streamDisplay( Smarty $smarty, array $streamEdges ){
+        
+        $stream = array();
+        foreach( $streamEdges as $s ){
+            if( $s instanceof UserStreamEdge ){
+                $stream[] = static::parseAction( $s->action() );
+            }
+            
+        }
+        $smarty->assign( 'stream', $stream );
+    }
+    
+    public static function parseAction( Action $action ){
+        
+        if( $action instanceof URLStreamAction ){
+            return array( 'title'=>$action->getTitle(), 'short'=>$action->getShort(), 'key'=>$action->getKey() );
+        } else {
+            return array( 'subj'=>$action->subject(), 'verb'=>$action->verb(), 'tar'=>$action->target() );
+        }
+        
+        
+    }
+    
+}
+
+?>

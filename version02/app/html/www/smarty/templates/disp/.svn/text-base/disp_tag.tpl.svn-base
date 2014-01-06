@@ -1,0 +1,1 @@
+<a href="{include file="links/link_tag.tpl" link=$tag}">{$disp}</a>

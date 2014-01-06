@@ -1,0 +1,1 @@
+<title>{$title} | Kolayt.com (Alpha)</title>

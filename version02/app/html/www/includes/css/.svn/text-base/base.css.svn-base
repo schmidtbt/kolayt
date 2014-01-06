@@ -1,0 +1,214 @@
+
+@font-face {
+	font-family: League-Gothic;
+	src: url("League-Gothic.otf") format("opentype");
+}
+
+body {
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+#wrap{
+    width:960px;
+    margin:20px auto auto auto;
+}
+
+#main_container{
+    background: white;
+    border-radius: 10px;
+}
+
+#header{
+    margin:auto;
+    height:120px;
+}
+
+#top-header{
+}
+
+#logo{
+    float:left;
+    margin: 15px 0px 0px 15px;
+}
+
+#logoname {
+    font-size: 42px;
+font-family: "League-Gothic", Courier;
+color: lightGrey;
+text-shadow: 0px 1px 1px #221;
+background: #474747;
+text-transform: uppercase;
+padding: 0px 20px 0px 20px;
+border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    background: url('../img/carbonfiber.png');
+    box-shadow: 0px 3px 10px #000;
+}
+
+#logocom {
+    font-size:25px;
+}
+
+#logotag {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px black;
+    display:none;
+}
+
+#menu {
+    padding: 0px 10px 0 0px;
+    float: right;
+    border-radius: 0px 10px 0px 0px;
+    border-bottom: 1px solid grey;
+    background-color: #EEE;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    box-shadow: 0px 2px 3px grey;
+}
+
+#buttonmenu{
+    
+}
+
+#buttonmenu li a {
+    color: black;
+    text-shadow: 0px 0px 1px white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px 14px 0 14px;
+    margin: 0px;
+    height: 35px;
+    line-height: 33px;
+    background-color:#EEE;
+}
+
+#buttonmenu li a:hover{
+    background: url('../img/carbonfiber.png');
+    color:#fff;
+}
+
+#searchwrap{
+    float: right;
+    margin-right: 15px;
+}
+
+#tagsearch {
+    padding: 5px;  
+    font-size: 15px;  
+    text-shadow: 0px 1px 0px #fff;  
+    outline: none;  
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));  
+    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 1px solid #717171;  
+    -webkit-box-shadow: 1px 1px 0px #efefef;  
+    -moz-box-shadow: 1px 1px 0px #efefef;  
+    box-shadow: 1px 1px 3px #221;
+}
+
+#tagsearch:focus {
+    -webkit-box-shadow: 0px 0px 5px #007eff;  
+    -moz-box-shadow: 0px 0px 5px #007eff;  
+    box-shadow: 0px 0px 5px #007eff;
+}
+
+#tagsearchresult {
+    position: absolute;
+background: white;
+width: 450px;
+z-index: 1000;
+border: 1px solid black;
+box-shadow: 2px 2px 2px grey;
+}
+
+#tagsearchresults {
+    padding: 5px;
+}
+
+#tagsearchresults li {
+    float: none;
+    display: block;
+    padding: 2px 0px 0px 0px;
+}
+
+#tagsearchresults li a {
+    float: none;
+    display: block;
+    font-size: 16px;
+    color: #221;
+    font-weight: bold;
+}
+
+#tagsearchresults li a:hover {
+    float: none;
+    display: block;
+    font-size: 16px;
+    color: #221;
+    background: #EEE;
+}
+
+.middle_banner{
+    height:304px;
+    padding: 0px 10px 0px 10px;
+}
+
+.featured_slider { 
+    width: 940px;
+    margin:auto; 
+    float:left;
+    box-shadow: 0px 3px 10px #000;
+}
+
+.fitem {
+    width: 940px;
+}
+
+.fimg-wrap{
+    width:500px;
+    float:left;
+}
+
+.feature-img {
+    margin: 0 auto 0 auto;
+    height: 280px;
+}
+
+.feature-info{
+    background: url('../images/featured-desc-bg.png');
+    width:400px;
+    height:280px;
+    float:right;
+    padding: 50px 10px 10px 10px;
+    color:white;
+}
+
+.feature-title{
+    font-size:30px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.feature-descr {
+    float:right;
+    width: 400px;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+    margin-top:5px;
+}
+
+.footer{
+    clear:both;
+    margin:auto;
+    background:url(../images/footer_bg.jpg) no-repeat center;
+    height:65px;
+}

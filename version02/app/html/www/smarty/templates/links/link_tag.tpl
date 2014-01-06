@@ -1,0 +1,1 @@
+/boot/?p=tag&tag={$tag}

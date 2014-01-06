@@ -1,0 +1,1 @@
+/boot/?p=api&p1=link&p2=visit&sid={$short}

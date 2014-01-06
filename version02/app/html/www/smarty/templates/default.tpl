@@ -1,0 +1,1 @@
+default smarty template ---default.tpl

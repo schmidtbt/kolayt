@@ -1,0 +1,58 @@
+<?php
+
+
+class CAC_Response {
+    
+    const MODE_HTML = 1;
+    const MODE_API = 2;
+    
+    
+    const CMD_GOOD = 1;
+    const CMD_INSUFFICIENT = 2;
+    const CMD_ERRROR = 3;
+    const CMD_FAIL = 4;
+    
+    
+    protected $status;
+    protected $header;
+    protected $data;
+    protected $mode;
+    protected $view;
+    
+    
+    function __construct(){
+        $this->status = self::CMD_ERRROR;
+        $this->mode = self::MODE_HTML;
+        $this->data = array();
+        $this->view = null;
+        $this->header = new CAC_Output_Headers();
+    }
+    
+    
+    function getView(){ return $this->view; }
+    function getMode(){ return $this->mode; }
+    function getData(){ return $this->data; }
+    function getHeader(){ return $this->header; }
+    function getStatus(){ return $this->status; }
+    
+    function setView( $view ){
+        $this->view = $view;
+    }
+    function setMode( $mode ){
+        $this->mode = $mode;
+    }
+    function setData( $tag, $data ){
+        $this->data[ $tag ] = $data;
+    }
+    function setHeader( CAC_Output_Headers $header ){
+        $this->header = $header;
+    }
+    function setStatus( $status ){
+        $this->status = $status;
+    }
+    
+    
+    
+}
+
+?>

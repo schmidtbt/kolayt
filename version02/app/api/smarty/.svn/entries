@@ -1,0 +1,40 @@
+10
+
+dir
+1890
+svn+ssh://Revan@titan001/svn/kore/trunk/server/backend/lib/kore/app/api/smarty
+svn+ssh://Revan@titan001/svn/kore
+
+
+
+2012-07-08T00:46:24.719036Z
+1876
+Revan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257e5939-2305-44b3-ac6c-71a7badb9126
+
+templates_c
+dir
+
+cache
+dir
+
+configs
+dir
+
+templates
+dir
+

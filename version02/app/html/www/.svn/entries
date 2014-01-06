@@ -1,0 +1,46 @@
+10
+
+dir
+1890
+svn+ssh://Revan@titan001/svn/kore/trunk/server/backend/lib/kore/app/html/www
+svn+ssh://Revan@titan001/svn/kore
+
+
+
+2012-07-10T02:20:49.182985Z
+1890
+Revan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257e5939-2305-44b3-ac6c-71a7badb9126
+
+smarty
+dir
+
+router
+dir
+
+commands
+dir
+
+responses
+dir
+
+includes
+dir
+
+assigners
+dir
+

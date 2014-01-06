@@ -1,0 +1,26 @@
+.tag {
+    
+}
+
+#tag-banner {
+    width: 940px;
+border-radius: 5px;
+padding: 10px;
+color: black;
+background: white;
+text-shadow: 0px 1px 1px black;
+}
+
+#tag-banner-display{
+    font-size: 60px;
+    font-family: "League-Gothic";
+    text-shadow: 2px 4px 5px grey;
+}
+
+#tag-banner-numfollow{
+    float:right;
+}
+
+#tag-banner-followtag {
+    float:left;
+}

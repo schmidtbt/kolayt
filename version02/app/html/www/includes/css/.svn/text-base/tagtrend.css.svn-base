@@ -1,0 +1,31 @@
+.trending-tags{
+    font-size:15px;
+    font-weight: bold;
+    padding: 0px 0px 5px 0px;
+}
+
+.tagtrend-box{
+    padding: 10px;
+}
+
+.tagtrend{
+    float:left;
+    margin: 0px 0px 0px 15px;
+    font-size: 12px;
+}
+
+.tagtrend a {
+    border-radius: 5px;
+    display:block;
+    padding: 2px 8px 2px 8px;
+    background: url('../img/background.jpg');
+    font-weight: bold;
+    
+    text-shadow: 0px 0px 1px #707072;
+    color: #47484B;
+}
+
+.tagtrend a:hover{
+    background: black;
+    color: white;
+}

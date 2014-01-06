@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * 
+ * @author Revan
+ */
+class API_Tag_Search extends CAC_Command {
+	
+	public function doExecute(CAC_Client_Request $http) {
+		$params = $http->getUrlParams();
+        
+        if( isset( $params['q'] ) ){
+			
+			$partialKey = new GraphKey( $params['q'], true );
+			var_dump( VicinityScanner::partialNodeScan($partialKey, 'TagNode' ) );
+			
+		}
+	}
+	
+}
+
+?>
